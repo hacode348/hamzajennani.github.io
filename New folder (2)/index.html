@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joudecar Tanger - Fast, Affordable, Reliable Car Rental in Tangier</title>
-    <meta name="description" content="Joudecar Tanger offers premium car rental services in Tangier, Morocco. Rent Peugeot 208, Hyundai Grand i10, Dacia Sandero Stepway, and Dacia Logan at competitive prices.">
+    <title data-translate="page-title">Joudecar Tanger - Location de voitures rapide, abordable et fiable à Tanger</title>
+    <meta name="description" content="Joudecar Tanger offre des services de location de voitures premium à Tanger, Maroc. Louez Peugeot 208, Hyundai Grand i10, Dacia Sandero Stepway et Dacia Logan à des prix compétitifs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script>
@@ -13,9 +16,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#1e3a8a",
-                        secondary: "#fbbf24",
-                        accent: "#1e40af"
+                        primary: "#000000",
+                        secondary: "#FF7A00",
+                        accent: "#2E2E2E"
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -42,7 +45,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
 .hero-gradient {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%), url('571795314_17842923120607946_7779213409472495373_n.jpg');
+    background: linear-gradient(135deg, #000000 0%, #FF7A00 100%), url('https://i.pinimg.com/736x/3f/67/38/3f6738da51d3c6d125c434d2b05bd0a1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -55,6 +58,102 @@
         .hover-lift:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Mobile Responsiveness for Header */
+        @media (max-width: 768px) {
+            header nav {
+                padding: 0.75rem 1rem;
+            }
+
+            header .logo {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header .logo .w-12 {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            header .logo img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            header .logo h1 {
+                font-size: 1.125rem;
+                line-height: 1.25;
+                margin: 0.25rem 0 0 0;
+            }
+
+            header .logo p {
+                font-size: 0.625rem;
+                margin: 0;
+            }
+
+            header .mobile-lang-button {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+                min-height: 2rem;
+            }
+
+            header #mobileMenuButton {
+                padding: 0.5rem;
+                min-width: 2rem;
+                min-height: 2rem;
+            }
+
+    header #mobileMenu {
+        padding: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    header #mobileMenu a,
+            header #mobileMenu button {
+                padding: 0.75rem 0;
+                font-size: 1rem;
+                min-height: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* RTL Support for Arabic */
+            [dir="rtl"] header .logo {
+                text-align: right;
+            }
+
+            [dir="rtl"] header .mobile-lang-button {
+                flex-direction: row-reverse;
+            }
+
+            [dir="rtl"] header #mobileMenuButton {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header nav {
+                padding: 0.5rem 0.75rem;
+            }
+
+            header .logo h1 {
+                font-size: 1rem;
+            }
+
+            header .logo p {
+                font-size: 0.6rem;
+            }
+
+            header #mobileMenu {
+                padding: 0.75rem;
+            }
+        }
+        /* Add left margin for desktop nav links with specified classes */
+        a.text-gray-700.hover\:text-primary.transition-colors {
+            margin-inline-start: 1rem; /* 16px */
         }
     </style>
 </head>
@@ -69,37 +168,89 @@
                         <img src="571795314_17842923120607946_7779213409472495373_n.jpg" alt="Joudecar Tanger Logo" class="w-12 h-12 rounded-full object-cover">
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-primary">Joudecar Tanger</h1>
-                        <p class="text-xs text-gray-600">Car Rental</p>
+                        <h1 class="text-xl font-bold text-primary mb-2" data-translate="company-name">Joudecar Tanger</h1>
+                        <p class="text-xs text-gray-600" data-translate="car-rental">Location de voitures</p>
                     </div>
                 </div>
                 
+
+
+                <!-- Mobile Language Switcher -->
+                <div class="md:hidden relative">
+                    <button id="mobile-lang-button" class="bg-gray-200 text-gray-700 px-3 py-2 rounded-full hover:bg-gray-300 transition-colors flex items-center space-x-1 text-sm font-medium min-h-[44px]">
+                        <span id="mobile-current-flag" class="text-lg">🇺🇸</span>
+                        <span id="mobile-current-lang">EN</span>
+                        <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div id="mobile-lang-dropdown" class="hidden absolute right-0 bg-white rounded-lg shadow-lg p-2 mt-1 z-60 min-w-[80px] w-full">
+                        <div class="lang-option-mobile cursor-pointer px-3 py-3 rounded hover:bg-gray-100 flex items-center space-x-2 min-h-[44px]" data-lang="en">
+                            <span class="text-lg">🇺🇸</span>
+                            <span>EN</span>
+                        </div>
+                        <div class="lang-option-mobile cursor-pointer px-3 py-3 rounded hover:bg-gray-100 flex items-center space-x-2 min-h-[44px]" data-lang="fr">
+                            <span class="text-lg">🇫🇷</span>
+                            <span>FR</span>
+                        </div>
+                        <div class="lang-option-mobile cursor-pointer px-3 py-3 rounded hover:bg-gray-100 flex items-center space-x-2 min-h-[44px]" data-lang="ar">
+                            <span class="text-lg">🇦🇪</span>
+                            <span>AR</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden text-primary" id="mobileMenuButton">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#fleet" class="text-gray-700 hover:text-primary transition-colors">Our Fleet</a>
-                    <a href="#reviews" class="text-gray-700 hover:text-primary transition-colors">Reviews</a>
-                    <a href="#location" class="text-gray-700 hover:text-primary transition-colors">Location</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
-                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent transition-colors">
-                        Book Now
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#fleet" class="text-gray-700 hover:text-primary transition-colors" data-translate="nav-fleet">Notre Flotte</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary transition-colors" data-translate="nav-reviews">Avis</a>
+                    <a href="#location" class="text-gray-700 hover:text-primary transition-colors" data-translate="nav-location">Emplacement</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors" data-translate="nav-contact">Contact</a>
+                    <div class="relative">
+                        <button id="lang-button" class="bg-gray-200 text-gray-700 px-4 py-3 rounded-full hover:bg-gray-300 transition-colors flex items-center space-x-1 text-base font-medium min-h-[44px]">
+                            <span id="current-flag" class="text-lg">🇺🇸</span>
+                            <span id="current-lang">EN</span>
+                            <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div id="lang-dropdown" class="hidden absolute right-0 bg-white rounded-lg shadow-lg p-2 mt-1 z-60 min-w-[80px] w-auto">
+                            <div class="lang-option cursor-pointer px-3 py-2 rounded hover:bg-gray-100 flex items-center space-x-2 min-h-[44px]" data-lang="en">
+                                <span class="text-lg">🇺🇸</span>
+                                <span>EN</span>
+                            </div>
+                            <div class="lang-option cursor-pointer px-3 py-2 rounded hover:bg-gray-100 flex items-center space-x-2 min-h-[44px]" data-lang="fr">
+                                <span class="text-lg">🇫🇷</span>
+                                <span>FR</span>
+                            </div>
+                            <div class="lang-option cursor-pointer px-3 py-2 rounded hover:bg-gray-100 flex items-center space-x-2 min-h-[44px]" data-lang="ar">
+                                <span class="text-lg">🇦🇪</span>
+                                <span>AR</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent transition-colors" data-translate="book-now">
+                        Réserver maintenant
                     </button>
                 </div>
+            </div>
             </div>
             
             <!-- Mobile Menu -->
             <div class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg p-4" id="mobileMenu">
                 <div class="flex flex-col space-y-4">
-                    <a href="#fleet" class="text-gray-700 hover:text-primary transition-colors py-2">Our Fleet</a>
-                    <a href="#reviews" class="text-gray-700 hover:text-primary transition-colors py-2">Reviews</a>
-                    <a href="#location" class="text-gray-700 hover:text-primary transition-colors py-2">Location</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors py-2">Contact</a>
-                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent transition-colors text-center">
-                        Book Now
+                    <a href="#fleet" class="text-gray-700 hover:text-primary transition-colors py-2" data-translate="nav-fleet">Notre Flotte</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary transition-colors py-2" data-translate="nav-reviews">Avis</a>
+                    <a href="#location" class="text-gray-700 hover:text-primary transition-colors py-2" data-translate="nav-location">Emplacement</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors py-2" data-translate="nav-contact">Contact</a>
+
+                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors text-center flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        <span data-translate="whatsapp-us">Contactez-nous sur WhatsApp</span>
+                    </button>
+                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent transition-colors text-center" data-translate="book-now">
+                        Réserver maintenant
                     </button>
                 </div>
             </div>
@@ -108,24 +259,24 @@
 
     <!-- Hero Section -->
     <section class="hero-gradient text-white">
-        <div class="container mx-auto px-4 py-20" >
+        <div class="container mx-auto px-4 py-20 __web-inspector-hide-shortcut__" >
 
             <div class="max-w-4xl mx-auto text-center animate-fade-in">
 
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-slide-up" data-translate="hero-title">
                     Joudecar Tanger
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-200 animate-slide-up" style="animation-delay: 0.2s">
-                    Fast, Affordable, Reliable Car Rental in Tangier
+                <p class="text-xl md:text-2xl mb-8 text-gray-200 animate-slide-up" style="animation-delay: 0.2s" data-translate="hero-subtitle">
+                    Location de voitures rapide, abordable et fiable à Tanger
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style="animation-delay: 0.4s">
-                    <button onclick="window.open('tel:+212701141248')" class="bg-secondary text-primary font-semibold px-8 py-4 rounded-lg hover-lift hover:bg-yellow-400 transition-colors">
+                    <button onclick="window.open('tel:+212701141248')" class="bg-secondary text-primary font-semibold px-8 py-4 rounded-lg hover-lift hover:bg-yellow-400 transition-colors" data-translate="call-now">
                         <i class="fas fa-phone mr-2"></i>
-                        Call Now: +212 701-141248
+                        Appelez maintenant : +212 701-141248
                     </button>
-                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover-lift hover:bg-gray-100 transition-colors">
+                    <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-white text-primary font-semibold px-8 py-4 rounded-lg hover-lift hover:bg-gray-100 transition-colors" data-translate="whatsapp-us">
                         <i class="fab fa-whatsapp mr-2 text-green-500"></i>
-                        WhatsApp Us
+                        Contactez-nous sur WhatsApp
                     </button>
                 </div>
             </div>
@@ -136,75 +287,83 @@
     <section id="fleet" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Car Fleet</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Choose from our well-maintained, modern vehicles at competitive prices</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-translate="fleet-title">Notre Flotte de Voitures</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-translate="fleet-description">Choisissez parmi nos véhicules modernes et bien entretenus à des prix compétitifs</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Car 1: Peugeot 208 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
-                    <img 
-                        src="https://i.pinimg.com/736x/1d/9f/6b/1d9f6b0d197b0ecd74b3221175b43452.jpg" 
-                        alt="Peugeot 208 - Compact and efficient city car" 
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift flex flex-col justify-between h-full">
+                    <img
+                        src="https://i.pinimg.com/736x/1d/9f/6b/1d9f6b0d197b0ecd74b3221175b43452.jpg"
+                        alt="Peugeot 208 - Compact and efficient city car"
                         class="w-full h-48 object-cover"
                         loading="lazy"
                     />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Peugeot 208</h3>
-                        <p class="text-gray-600 mb-4">Perfect for city driving and fuel efficiency</p>
-                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors">
-                            Book Now
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2" data-translate="peugeot-name">Peugeot 208</h3>
+                            <p class="text-gray-600 mb-4" data-translate="peugeot-description">Parfait pour la conduite en ville et l'efficacité énergétique</p>
+                        </div>
+                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors" data-translate="book-now">
+                            Réserver maintenant
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Car 2: Hyundai Grand i10 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
-                    <img 
-                        src="https://i.pinimg.com/1200x/98/de/77/98de774456dff17ab4d0d90a1e201d60.jpg" 
-                        alt="Hyundai Grand i10 - Reliable and spacious hatchback" 
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift flex flex-col justify-between h-full">
+                    <img
+                        src="https://i.pinimg.com/1200x/98/de/77/98de774456dff17ab4d0d90a1e201d60.jpg"
+                        alt="Hyundai Grand i10 - Reliable and spacious hatchback"
                         class="w-full h-48 object-cover"
                         loading="lazy"
                     />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Hyundai Grand i10</h3>
-                        <p class="text-gray-600 mb-4">Spacious interior with excellent reliability</p>
-                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors">
-                            Book Now
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2" data-translate="hyundai-name">Hyundai Grand i10</h3>
+                            <p class="text-gray-600 mb-4" data-translate="hyundai-description">Intérieur spacieux avec une excellente fiabilité</p>
+                        </div>
+                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors" data-translate="book-now">
+                            Réserver maintenant
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Car 3: Dacia Sandero Stepway -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
-                    <img 
-                        src="https://i.pinimg.com/736x/6b/a4/c5/6ba4c5ba0d95b069759c09d5b5a11024.jpg" 
-                        alt="Dacia Sandero Stepway - Versatile crossover for all terrains" 
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift flex flex-col justify-between h-full">
+                    <img
+                        src="https://i.pinimg.com/736x/6b/a4/c5/6ba4c5ba0d95b069759c09d5b5a11024.jpg"
+                        alt="Dacia Sandero Stepway - Versatile crossover for all terrains"
                         class="w-full h-48 object-cover"
                         loading="lazy"
                     />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Dacia Sandero Stepway</h3>
-                        <p class="text-gray-600 mb-4">Crossover versatility with rugged capability</p>
-                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors">
-                            Book Now
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2" data-translate="sandero-name">Dacia Sandero Stepway</h3>
+                            <p class="text-gray-600 mb-4" data-translate="sandero-description">Polyvalence crossover avec capacité robuste</p>
+                        </div>
+                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors" data-translate="book-now">
+                            Réserver maintenant
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Car 4: Dacia Logan -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift">
-                    <img 
-                        src="https://i.pinimg.com/1200x/45/bb/ff/45bbff5e0c305b3497ded297304b88e8.jpg" 
-                        alt="Dacia Logan - Comfortable sedan for long journeys" 
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift flex flex-col justify-between h-full">
+                    <img
+                        src="https://i.pinimg.com/1200x/45/bb/ff/45bbff5e0c305b3497ded297304b88e8.jpg"
+                        alt="Dacia Logan - Comfortable sedan for long journeys"
                         class="w-full h-48 object-cover"
                         loading="lazy"
                     />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Dacia Logan</h3>
-                        <p class="text-gray-600 mb-4">Comfortable sedan perfect for family trips</p>
-                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors">
-                            Book Now
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2" data-translate="logan-name">Dacia Logan</h3>
+                            <p class="text-gray-600 mb-4" data-translate="logan-description">Berline confortable parfaite pour les voyages en famille</p>
+                        </div>
+                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-accent transition-colors" data-translate="book-now">
+                            Réserver maintenant
                         </button>
                     </div>
                 </div>
@@ -216,7 +375,7 @@
     <section id="reviews" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Customer Reviews</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-translate="reviews-title">Avis Clients</h2>
                 <div class="flex items-center justify-center space-x-2 mb-4">
                     <div class="flex text-secondary">
                         <i class="fas fa-star"></i>
@@ -225,16 +384,16 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <span class="text-gray-700 font-semibold">4.7/5 Rating</span>
+                    <span class="text-gray-700 font-semibold" data-translate="rating">Note 4.7/5</span>
                 </div>
-                <p class="text-gray-600 max-w-2xl mx-auto">See what our customers say about their experience</p>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-translate="reviews-description">Découvrez ce que disent nos clients</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Review 1 -->
                 <div class="bg-gray-50 rounded-xl p-6 hover-lift">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                    <div class="flex items-center mb-4 gap-3">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
                             SA
                         </div>
                         <div>
@@ -248,13 +407,13 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Excellent service! The car was clean, well-maintained, and the process was super fast. Will definitely rent from Joudecar again!"</p>
+                    <p class="text-gray-600 italic" data-translate="review-1-comment">"Excellent service ! La voiture était propre, bien entretenue, et le processus était super rapide. Je louerai définitivement chez Joudecar à nouveau !"</p>
                 </div>
                 
                 <!-- Review 2 -->
                 <div class="bg-gray-50 rounded-xl p-6 hover-lift">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                    <div class="flex items-center mb-4 gap-3">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
                             IB
                         </div>
                         <div>
@@ -268,13 +427,13 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Very professional team and affordable prices. The Dacia Sandero Stepway was perfect for our trip around Tangier. Highly recommended!"</p>
+                    <p class="text-gray-600 italic" data-translate="review-2-comment">"Équipe très professionnelle et prix abordables. Le Dacia Sandero Stepway était parfait pour notre voyage autour de Tanger. Hautement recommandé !"</p>
                 </div>
-                
+
                 <!-- Review 3 -->
                 <div class="bg-gray-50 rounded-xl p-6 hover-lift">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                    <div class="flex items-center mb-4 gap-3">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
                             YM
                         </div>
                         <div>
@@ -288,7 +447,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Great experience from start to finish. The car was in perfect condition and the staff was very helpful. Best car rental in Tangier!"</p>
+                    <p class="text-gray-600 italic" data-translate="review-3-comment">"Excellente expérience du début à la fin. La voiture était en parfait état et le personnel était très serviable. Meilleure location de voitures à Tanger !"</p>
                 </div>
             </div>
         </div>
@@ -298,21 +457,21 @@
     <section id="location" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Find Us in Tangier</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Visit our location in the beautiful city of Tangier, Morocco</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4" data-translate="location-title">Trouvez-nous à Tanger</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-translate="location-description">Visitez notre emplacement dans la belle ville de Tanger, Maroc</p>
             </div>
             
             <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="h-96 w-full">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105935.2424690369!2d-5.902559349999999!3d35.75946505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b875cf04c132d%3A0x76bfc571bfb4e17a!2sTangier%2C%20Morocco!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
+            <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.7032369672856!2d-5.847933725158949!3d35.75809822574923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b87f7b3666b1f%3A0x6172d0132a4717f5!2sJoudecar%20tanger!5e0!3m2!1sen!2sma!4v1763648664728!5m2!1sen!2sma"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="Joudecar Tanger Location in Tangier, Morocco">
+                        title="Joudecar Tanger Location">
                     </iframe>
                 </div>
             </div>
@@ -323,8 +482,8 @@
     <section id="contact" class="py-20 bg-primary text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
-                <p class="text-gray-200 max-w-2xl mx-auto">Get in touch with us for any inquiries or to book your car</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-translate="contact-title">Contactez-nous</h2>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="contact-description">Contactez-nous pour toute question ou pour réserver votre voiture</p>
             </div>
             
             <div class="max-w-4xl mx-auto">
@@ -332,30 +491,30 @@
                     <!-- Phone -->
                     <div class="text-center bg-accent rounded-xl p-6 hover-lift">
                         <i class="fas fa-phone text-3xl mb-4 text-secondary"></i>
-                        <h3 class="text-xl font-semibold mb-2">Call Us</h3>
-                        <p class="text-gray-200 mb-4">Available 24/7 for your convenience</p>
+                        <h3 class="text-xl font-semibold mb-2" data-translate="call-us">Appelez-nous</h3>
+                        <p class="text-gray-200 mb-4" data-translate="call-description">Disponible 24/7 pour votre commodité</p>
                         <button onclick="window.open('tel:+212701141248')" class="bg-secondary text-primary font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-colors">
                             +212 701-141248
                         </button>
                     </div>
-                    
+
                     <!-- WhatsApp -->
                     <div class="text-center bg-accent rounded-xl p-6 hover-lift">
                         <i class="fab fa-whatsapp text-3xl mb-4 text-green-400"></i>
-                        <h3 class="text-xl font-semibold mb-2">WhatsApp</h3>
-                        <p class="text-gray-200 mb-4">Quick responses and easy booking</p>
-                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
+                        <h3 class="text-xl font-semibold mb-2" data-translate="whatsapp-title">WhatsApp</h3>
+                        <p class="text-gray-200 mb-4" data-translate="whatsapp-description">Réponses rapides et réservation facile</p>
+                        <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-600 transition-colors" data-translate="message-us">
                             Message Us
                         </button>
                     </div>
-                    
+
                     <!-- Instagram -->
                     <div class="text-center bg-accent rounded-xl p-6 hover-lift">
                         <i class="fab fa-instagram text-3xl mb-4 text-pink-400"></i>
-                        <h3 class="text-xl font-semibold mb-2">Instagram</h3>
-                        <p class="text-gray-200 mb-4">Follow us for updates and offers</p>
-                        <button onclick="window.open('https://www.instagram.com/joude.car.tanger?igsh=NDZhZzF0bnl4d3Nt', '_blank')" class="bg-pink-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-pink-600 transition-colors">
-                            Follow Us
+                        <h3 class="text-xl font-semibold mb-2" data-translate="instagram-title">Instagram</h3>
+                        <p class="text-gray-200 mb-4" data-translate="instagram-description">Suivez-nous pour les mises à jour et offres</p>
+                        <button onclick="window.open('https://www.instagram.com/joude.car.tanger?igsh=NDZhZzF0bnl4d3Nt', '_blank')" class="bg-pink-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-pink-600 transition-colors" data-translate="follow-us">
+                            Suivez-nous
                         </button>
                     </div>
                 </div>
@@ -373,14 +532,14 @@
                 <img src="571795314_17842923120607946_7779213409472495373_n.jpg" alt="Joudecar Tanger Logo" class="w-10 h-10 rounded-full object-cover">
             </div>
                         <div>
-                            <h3 class="text-xl font-bold">Joudecar Tanger</h3>
-                            <p class="text-gray-400 text-sm">Car Rental Services</p>
+                            <h3 class="text-xl font-bold" data-translate="company-name">Joudecar Tanger</h3>
+                            <p class="text-gray-400 text-sm" data-translate="car-rental-services">Services de Location de Voitures</p>
                         </div>
                     </div>
-                    <p class="text-gray-400">Fast, Affordable, Reliable Car Rental in Tangier</p>
+                    <p class="text-gray-400" data-translate="hero-subtitle">Location de voitures rapide, abordable et fiable à Tanger</p>
                 </div>
                 
-                <div class="flex space-x-4">
+                <div class="flex gap-6">
                     <button onclick="window.open('https://wa.me/212701141248', '_blank')" class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                         <i class="fab fa-whatsapp"></i>
                     </button>
@@ -394,7 +553,7 @@
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Joudecar Tanger. All rights reserved. | Tangier, Morocco</p>
+                <p data-translate="copyright">&copy; 2024 Joudecar Tanger. Tous droits réservés. | Tanger, Maroc</p>
             </div>
         </div>
     </footer>
@@ -408,19 +567,33 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for anchor links with fixed header offset
+        const header = document.querySelector('header');
+
+        function smoothScrollWithOffset(target) {
+            const headerHeight = header ? header.offsetHeight : 0;
+            const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    smoothScrollWithOffset(target);
+                }
+                // Close mobile menu after clicking a link
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
                 }
             });
         });
+
         
         // Data for the page
         const companyInfo = {
@@ -481,6 +654,247 @@
                 "comment": "Great experience from start to finish. The car was in perfect condition and the staff was very helpful. Best car rental in Tangier!"
             }
         ];
+
+        // Translations
+        const translations = {
+            "en": {
+                "page-title": "Joudecar Tanger - Fast, Affordable, Reliable Car Rental in Tangier",
+                "company-name": "Joudecar Tanger",
+                "car-rental": "Car Rental",
+                "nav-fleet": "Our Fleet",
+                "nav-reviews": "Reviews",
+                "nav-location": "Location",
+                "nav-contact": "Contact",
+                "book-now": "Book Now",
+                "hero-title": "Joudecar Tanger",
+                "hero-subtitle": "Fast, Affordable, Reliable Car Rental in Tangier",
+                "call-now": "Call Now: +212 701-141248",
+                "whatsapp-us": "WhatsApp Us",
+                "fleet-title": "Our Car Fleet",
+                "fleet-description": "Choose from our well-maintained, modern vehicles at competitive prices",
+                "peugeot-name": "Peugeot 208",
+                "peugeot-description": "Perfect for city driving and fuel efficiency",
+                "hyundai-name": "Hyundai Grand i10",
+                "hyundai-description": "Spacious interior with excellent reliability",
+                "sandero-name": "Dacia Sandero Stepway",
+                "sandero-description": "Crossover versatility with rugged capability",
+                "logan-name": "Dacia Logan",
+                "logan-description": "Comfortable sedan perfect for family trips",
+                "reviews-title": "Customer Reviews",
+                "rating": "4.7/5 Rating",
+                "reviews-description": "See what our customers say about their experience",
+                "review-1-comment": "Excellent service! The car was clean, well-maintained, and the process was super fast. Will definitely rent from Joudecar again!",
+                "review-2-comment": "Very professional team and affordable prices. The Dacia Sandero Stepway was perfect for our trip around Tangier. Highly recommended!",
+                "review-3-comment": "Great experience from start to finish. The car was in perfect condition and the staff was very helpful. Best car rental in Tangier!",
+                "location-title": "Find Us in Tangier",
+                "location-description": "Visit our location in the beautiful city of Tangier, Morocco",
+                "contact-title": "Contact Us",
+                "contact-description": "Get in touch with us for any inquiries or to book your car",
+                "call-us": "Call Us",
+                "call-description": "Available 24/7 for your convenience",
+                "whatsapp-title": "WhatsApp",
+                "whatsapp-description": "Quick responses and easy booking",
+                "instagram-title": "Instagram",
+                "instagram-description": "Follow us for updates and offers",
+                "follow-us": "Follow Us",
+                "car-rental-services": "Car Rental Services",
+                "copyright": "© 2024 Joudecar Tanger. All rights reserved. | Tangier, Morocco"
+            },
+            "fr": {
+                "page-title": "Joudecar Tanger - Location de voitures rapide, abordable et fiable à Tanger",
+                "company-name": "Joudecar Tanger",
+                "car-rental": "Location de voitures",
+                "nav-fleet": "Notre Flotte",
+                "nav-reviews": "Avis",
+                "nav-location": "Emplacement",
+                "nav-contact": "Contact",
+                "book-now": "Réserver maintenant",
+                "hero-title": "Joudecar Tanger",
+                "hero-subtitle": "Location de voitures rapide, abordable et fiable à Tanger",
+                "call-now": "Appelez maintenant : +212 701-141248",
+                "whatsapp-us": "Contactez-nous sur WhatsApp",
+                "fleet-title": "Notre Flotte de Voitures",
+                "fleet-description": "Choisissez parmi nos véhicules modernes et bien entretenus à des prix compétitifs",
+                "peugeot-name": "Peugeot 208",
+                "peugeot-description": "Parfait pour la conduite en ville et l'efficacité énergétique",
+                "hyundai-name": "Hyundai Grand i10",
+                "hyundai-description": "Intérieur spacieux avec une excellente fiabilité",
+                "sandero-name": "Dacia Sandero Stepway",
+                "sandero-description": "Polyvalence crossover avec capacité robuste",
+                "logan-name": "Dacia Logan",
+                "logan-description": "Berline confortable parfaite pour les voyages en famille",
+                "reviews-title": "Avis Clients",
+                "rating": "Note 4.7/5",
+                "reviews-description": "Découvrez ce que disent nos clients",
+                "review-1-comment": "Excellent service ! La voiture était propre, bien entretenue, et le processus était super rapide. Je louerai définitivement chez Joudecar à nouveau !",
+                "review-2-comment": "Équipe très professionnelle et prix abordables. Le Dacia Sandero Stepway était parfait pour notre voyage autour de Tanger. Hautement recommandé !",
+                "review-3-comment": "Excellente expérience du début à la fin. La voiture était en parfait état et le personnel était très serviable. Meilleure location de voitures à Tanger !",
+                "location-title": "Trouvez-nous à Tanger",
+                "location-description": "Visitez notre emplacement dans la belle ville de Tanger, Maroc",
+                "contact-title": "Contactez-nous",
+                "contact-description": "Contactez-nous pour toute question ou pour réserver votre voiture",
+                "call-us": "Appelez-nous",
+                "call-description": "Disponible 24/7 pour votre commodité",
+                "whatsapp-title": "WhatsApp",
+                "whatsapp-description": "Réponses rapides et réservation facile",
+                "instagram-title": "Instagram",
+                "instagram-description": "Suivez-nous pour les mises à jour et offres",
+                "follow-us": "Suivez-nous",
+                "car-rental-services": "Services de Location de Voitures",
+                "copyright": "© 2024 Joudecar Tanger. Tous droits réservés. | Tanger, Maroc"
+            },
+            "ar": {
+                "page-title": "Joudecar Tanger - تأجير سيارات سريع وميسور التكلفة وموثوق في طنجة",
+                "company-name": "Joudecar Tanger",
+                "car-rental": "تأجير سيارات",
+                "nav-fleet": "أسطولنا",
+                "nav-reviews": "التقييمات",
+                "nav-location": "الموقع",
+                "nav-contact": "اتصل بنا",
+                "book-now": "احجز الآن",
+                "hero-title": "Joudecar Tanger",
+                "hero-subtitle": "تأجير سيارات سريع وميسور التكلفة وموثوق في طنجة",
+                "call-now": "اتصل الآن: +212701141248",
+                "whatsapp-us": "تواصل معنا عبر واتساب",
+                "fleet-title": "أسطول سياراتنا",
+                "fleet-description": "اختر من سياراتنا الحديثة والمُحافظ عليها جيدًا بأسعار تنافسية",
+                "peugeot-name": "بيجو 208",
+                "peugeot-description": "مثالي للقيادة في المدينة وكفاءة الوقود",
+                "hyundai-name": "هيونداي غراند i10",
+                "hyundai-description": "داخل واسع مع موثوقية ممتازة",
+                "sandero-name": "داسيا سانيرو ستيبواي",
+                "sandero-description": "تنوع كروس أوفر مع قدرة قوية",
+                "logan-name": "داسيا لوغان",
+                "logan-description": "سيدان مريح مثالي لرحلات العائلة",
+                "reviews-title": "تقييمات العملاء",
+                "rating": "تقييم 4.7/5",
+                "reviews-description": "تعرف على ما يقوله عملاؤنا عن تجربتهم",
+                "review-1-comment": "خدمة ممتازة! السيارة كانت نظيفة ومُحافظ عليها جيدًا، والعملية كانت سريعة جدًا. سأؤجر بالتأكيد من جودكار مرة أخرى!",
+                "review-2-comment": "فريق محترف جدًا وأسعار معقولة. داسيا سانيرو ستيبواي كان مثاليًا لراحتنا حول طنجة. موصى به بشدة!",
+                "review-3-comment": "تجربة رائعة من البداية إلى النهاية. السيارة كانت في حالة مثالية والموظفون كانوا مفيدين جدًا. أفضل تأجير سيارات في طنجة!",
+                "location-title": "اعثر علينا في طنجة",
+                "location-description": "زور موقعنا في المدينة الجميلة طنجة، المغرب",
+                "contact-title": "اتصل بنا",
+                "contact-description": "تواصل معنا لأي استفسارات أو لحجز سيارتك",
+                "call-us": "اتصل بنا",
+                "call-description": "متاح 24/7 لراحتك",
+                "whatsapp-title": "واتساب",
+                "whatsapp-description": "ردود سريعة وحجز سهل",
+                "instagram-title": "إنستغرام",
+                "instagram-description": "تابعنا للتحديثات والعروض",
+                "follow-us": "تابعنا",
+                "car-rental-services": "خدمات تأجير السيارات",
+                "copyright": "© 2024 جودكار طنجة. جميع الحقوق محفوظة. | طنجة، المغرب"
+            }
+        };
+
+        // Language switcher functionality
+        const langButton = document.getElementById('lang-button');
+        const langDropdown = document.getElementById('lang-dropdown');
+        const currentFlag = document.getElementById('current-flag');
+        const currentLang = document.getElementById('current-lang');
+
+        // Mobile language switcher
+        const mobileLangButton = document.getElementById('mobile-lang-button');
+        const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+        const mobileCurrentFlag = document.getElementById('mobile-current-flag');
+        const mobileCurrentLang = document.getElementById('mobile-current-lang');
+
+        // Language data
+        const languages = {
+            'en': { flag: '🇺🇸', code: 'EN' },
+            'fr': { flag: '🇫🇷', code: 'FR' },
+            'ar': { flag: '🇦🇪', code: 'AR' }
+        };
+
+        // Initialize language from localStorage or default to 'fr'
+        let currentLanguage = localStorage.getItem('lang') || 'fr';
+        updateButtonDisplay(currentLanguage);
+        updateMobileButtonDisplay(currentLanguage);
+        changeLanguage(currentLanguage);
+
+        // Toggle desktop dropdown
+        langButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('hidden');
+        });
+
+        // Toggle mobile dropdown
+        mobileLangButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileLangDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!langButton.contains(e.target)) {
+                langDropdown.classList.add('hidden');
+            }
+            if (!mobileLangButton.contains(e.target)) {
+                mobileLangDropdown.classList.add('hidden');
+            }
+        });
+
+        // Handle desktop language selection
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const selectedLang = e.currentTarget.getAttribute('data-lang');
+                changeLanguage(selectedLang);
+                localStorage.setItem('lang', selectedLang);
+                updateButtonDisplay(selectedLang);
+                updateMobileButtonDisplay(selectedLang);
+                langDropdown.classList.add('hidden');
+                // Reload page to apply changes
+                window.location.reload();
+            });
+        });
+
+        // Handle mobile language selection
+        document.querySelectorAll('.lang-option-mobile').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const selectedLang = e.currentTarget.getAttribute('data-lang');
+                changeLanguage(selectedLang);
+                localStorage.setItem('lang', selectedLang);
+                updateButtonDisplay(selectedLang);
+                updateMobileButtonDisplay(selectedLang);
+                mobileLangDropdown.classList.add('hidden');
+                // Reload page to apply changes
+                window.location.reload();
+            });
+        });
+
+        // Update desktop button display
+        function updateButtonDisplay(lang) {
+            currentFlag.textContent = languages[lang].flag;
+            currentLang.textContent = languages[lang].code;
+        }
+
+        // Update mobile button display
+        function updateMobileButtonDisplay(lang) {
+            mobileCurrentFlag.textContent = languages[lang].flag;
+            mobileCurrentLang.textContent = languages[lang].code;
+        }
+
+        // Change language function
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
     </script>
 </body>
 </html>
+
+
